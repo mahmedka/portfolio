@@ -56,32 +56,19 @@ window.onload = function () {
   css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
   document.body.appendChild(css);
 };
-setInterval(function () {
-  document.title = "Mohamed Kamal";
-  setTimeout(function () {
-    document.title = "Fronted Developer";
-  }, 1500);
-  setTimeout(function () {
-    document.title = "Backend Developer";
-  }, 3000);
-}, 4500);
 
 handAnimation = document.querySelector(".hand");
 btnHire = document.querySelector(".hire");
-available = document.querySelector(".available");
 setTimeout(() => {
-    handAnimation.style.display = "block";
+    handAnimation.style.opacity = 1;
     btnHire.classList.add("effect");
-    available.classList.add("available-effect");
 }, 6500);
 setInterval(() => {
-    handAnimation.style.display = "none";
+    handAnimation.style.opacity = 0;
     btnHire.classList.remove("effect");
-    available.classList.remove("available-effect");
     setTimeout(() => {
-        handAnimation.style.display = "block";
+        handAnimation.style.opacity = 1;
         btnHire.classList.add("effect");
-        available.classList.add("available-effect");
-    },6500)
+    }, 6500)
 }, 13000);
 

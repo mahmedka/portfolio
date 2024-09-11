@@ -12,9 +12,22 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"
+      defer
+    ></script>
   </head>
   <body>
+    <div id="loader-body">
+      <div class="loader"></div>
+    </div>
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          document.getElementById("loader-body").style.display = "none";
+        }, 4000);
+      });
+    </script>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container">
         <a class="navbar-brand" href="#">
@@ -69,7 +82,7 @@
                   href=""
                   class="typewrite"
                   data-period="2000"
-                  data-type='[ "Mohamed Kamal","Frontend Developer.", "Backend Developer.", "Full Stack Developer." ]'
+                  data-type='[ "Mohamed Kamal.","Frontend Developer.", "Backend Developer."]'
                 >
                   <span class="wrap"></span>
                 </p>
@@ -80,31 +93,40 @@
                 that elevate brands and captivate users.
               </p>
               <div class="social d-flex">
-                <a href="#" class="social-icon">
+                <a
+                  href="https://web.facebook.com/Alkabitanoo1"
+                  class="social-icon"
+                >
                   <div class="icon">
                     <i class="fa-brands fa-facebook-f"></i>
                   </div>
                 </a>
 
-                <a href="#" class="social-icon">
+                <a
+                  href="www.linkedin.com/in/mohamed-kamal-morgan"
+                  class="social-icon"
+                >
                   <div class="icon">
                     <i class="fa-brands fa-linkedin-in"></i>
                   </div>
                 </a>
 
-                <a href="#" class="social-icon">
+                <a href="https://wa.me/+201009698696" class="social-icon">
                   <div class="icon">
                     <i class="fa-brands fa-whatsapp"></i>
                   </div>
                 </a>
 
-                <a href="#" class="social-icon">
+                <a href="https://github.com/mahmedka" class="social-icon">
                   <div class="icon">
                     <i class="fa-brands fa-github"></i>
                   </div>
                 </a>
 
-                <a href="#" class="social-icon">
+                <a
+                  href="https://www.instagram.com/m7md.kml"
+                  class="social-icon"
+                >
                   <div class="icon">
                     <i class="fa-brands fa-instagram"></i>
                   </div>
@@ -149,7 +171,7 @@
         <div class="container">
           <h2>About me</h2>
           <div class="row">
-            <div class="about-text col-md-6">
+            <div class="about-text col-md-7">
               <p class="detailes">
                 <b>Hello,</b> my name is Mohamed, and I am a graduate of Delta
                 Academy with a degree in Information Systems. I have extensive
@@ -158,9 +180,13 @@
                 working with Laravel.
               </p>
               <div class="available">
-                <h5>Available for :</h5>
-                <p>Freelance</p>
-                <p>Full time job</p>
+                <div class="box">
+                  <h5>Available for :</h5>
+                  <div>
+                    <p>Freelance</p>
+                    <p>Full time job</p>
+                  </div>
+                </div>
               </div>
 
               <div class="info">
@@ -234,6 +260,28 @@
                 alt="project 6"
               />
             </div>
+            <div class="project-card col-12 col-md-6 col-lg-4">
+              <img
+                src="./assets/images/projects/07.webp"
+                loading="lazy"
+                alt="project 6"
+              />
+            </div>
+            <div class="project-card col-12 col-md-6 col-lg-4">
+              <img
+                src="./assets/images/projects/08.webp"
+                loading="lazy"
+                alt="project 6"
+              />
+            </div>
+            <div class="project-card col-12 col-md-6 col-lg-4">
+              <div class="add-project">
+                <div class="plus-col"></div>
+                <div class="plus-row"></div>
+                <a class="add-project-link" href="#contact"></a>
+                <p>Add Your Project</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -245,16 +293,6 @@
             <div class="contact-img col-md-5 col-12">
               <img
                 src="assets/images/hire2.webp"
-                loading="lazy"
-                alt="hire img"
-              />
-              <img
-                style="
-                  width: 100px;
-                  filter: sepia(3) saturate(2000%) hue-rotate(320deg)
-                    brightness(0.9);
-                "
-                src="assets/images/hand-ezgif.com-gif-to-webp-converter.webp"
                 loading="lazy"
                 alt="hire img"
               />
@@ -275,31 +313,34 @@
             <a href="#"><img src="assets/images/logo.webp" loading="lazy" /></a>
           </p>
           <div class="social d-flex">
-            <a href="#" class="social-icon">
+            <a href="https://web.facebook.com/Alkabitanoo1" class="social-icon">
               <div class="icon">
                 <i class="fa-brands fa-facebook-f"></i>
               </div>
             </a>
 
-            <a href="#" class="social-icon">
+            <a
+              href="www.linkedin.com/in/mohamed-kamal-morgan"
+              class="social-icon"
+            >
               <div class="icon">
                 <i class="fa-brands fa-linkedin-in"></i>
               </div>
             </a>
 
-            <a href="#" class="social-icon">
+            <a href="https://wa.me/+201009698696" class="social-icon">
               <div class="icon">
                 <i class="fa-brands fa-whatsapp"></i>
               </div>
             </a>
 
-            <a href="#" class="social-icon">
+            <a href="https://github.com/mahmedka" class="social-icon">
               <div class="icon">
                 <i class="fa-brands fa-github"></i>
               </div>
             </a>
 
-            <a href="#" class="social-icon">
+            <a href="https://www.instagram.com/m7md.kml" class="social-icon">
               <div class="icon">
                 <i class="fa-brands fa-instagram"></i>
               </div>
@@ -308,142 +349,8 @@
         </div>
       </div>
     </footer>
-    <script>
-      function initSimulation() {
-        var Engine = Matter.Engine,
-          Render = Matter.Render,
-          Events = Matter.Events,
-          MouseConstraint = Matter.MouseConstraint,
-          Mouse = Matter.Mouse,
-          World = Matter.World,
-          Bodies = Matter.Bodies;
 
-        var engine = Engine.create(),
-          world = engine.world;
-
-        var containerElement = document.querySelector(".tag-canvas");
-        var containerWidth = containerElement.clientWidth + 2;
-        var containerHeight = containerElement.clientHeight + 2;
-
-        var render = Render.create({
-          element: containerElement,
-          engine: engine,
-          options: {
-            width: containerWidth,
-            height: containerHeight,
-            pixelRatio: 2,
-            background: "transparent",
-            wireframes: false,
-          },
-        });
-
-        var ground = Bodies.rectangle(
-          containerWidth / 2,
-          containerHeight + 50,
-          containerWidth,
-          100,
-          { isStatic: true }
-        );
-        var wallLeft = Bodies.rectangle(
-          -50,
-          containerHeight / 2,
-          100,
-          containerHeight,
-          { isStatic: true }
-        );
-        var wallRight = Bodies.rectangle(
-          containerWidth + 50,
-          containerHeight / 2,
-          100,
-          containerHeight,
-          { isStatic: true }
-        );
-        var roof = Bodies.rectangle(
-          containerWidth / 2,
-          -50,
-          containerWidth,
-          100,
-          { isStatic: true }
-        );
-
-        function createRandomBody(imagePath) {
-          var randomX = Math.random() * containerWidth;
-          var randomY = (Math.random() * containerHeight) / 2;
-          var body = Bodies.rectangle(randomX, randomY, 145, 40, {
-            render: {
-              fillStyle: "#EDDC8C",
-              sprite: {
-                texture: imagePath,
-                xScale: 1,
-                yScale: 1,
-              },
-            },
-          });
-
-          var randomForceX = (Math.random() - 0.5) * 0.03;
-          var randomForceY = (Math.random() - 0.5) * 0.03;
-          Matter.Body.applyForce(
-            body,
-            { x: body.position.x, y: body.position.y },
-            { x: randomForceX, y: randomForceY }
-          );
-
-          return body;
-        }
-
-        var bodies = [
-          createRandomBody("./assets/images/skills/Html.svg"),
-          createRandomBody("./assets/images/skills/css.svg"),
-          createRandomBody("./assets/images/skills/bootstrap.svg"),
-          createRandomBody("./assets/images/skills/scss.svg"),
-          createRandomBody("./assets/images/skills/laravel.svg"),
-          createRandomBody("./assets/images/skills/php.svg"),
-          createRandomBody("./assets/images/skills/javascript.svg"),
-          createRandomBody("./assets/images/skills/tailwind.svg"),
-          createRandomBody("./assets/images/skills/git.svg"),
-          createRandomBody("./assets/images/skills/github.svg"),
-          createRandomBody("./assets/images/skills/vue.svg"),
-          createRandomBody("./assets/images/skills/mysql.svg"),
-          createRandomBody("./assets/images/skills/canva.svg"),
-          createRandomBody("./assets/images/skills/typescript.svg"),
-          createRandomBody("./assets/images/skills/photoshop.svg"),
-          createRandomBody("./assets/images/skills/sql.svg"),
-        ];
-
-        World.add(engine.world, [ground, wallLeft, wallRight, roof, ...bodies]);
-
-        var mouse = Mouse.create(render.canvas),
-          mouseConstraint = MouseConstraint.create(engine, {
-            mouse: mouse,
-            constraint: {
-              stiffness: 0.2,
-              render: {
-                visible: false,
-              },
-            },
-          });
-
-        World.add(world, mouseConstraint);
-
-        render.mouse = mouse;
-
-        Engine.run(engine);
-        Render.run(render);
-      }
-
-      var containerElement = document.querySelector(".tag-canvas");
-
-      var observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            initSimulation();
-            observer.disconnect();
-          }
-        });
-      });
-
-      observer.observe(containerElement);
-    </script>
+    <script src="assets/js/matter.js"></script>
     <script src="assets/js/all.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>

@@ -162,9 +162,9 @@ header .container .row .text .btns .hand {
   width: 60px;
   right: 55px;
   rotate: -20deg;
-  display: none;
+  opacity: 0;
   filter: sepia(1) saturate(1600%) hue-rotate(325deg) brightness(0.9);
-  transition: ease-in 1s linear, ease-out 1s;
+  transition: ease-in 0.1s linear, ease-out 0.1s;
 }
 header .container .row .main-image .box-image {
   position: relative;
@@ -290,29 +290,35 @@ header .container .row .main-image .box-image:hover span:nth-child(4) {
   text-align: justify;
 }
 .about .container .row .about-text .available {
-  display: flex;
-  align-items: center;
   margin: 30px 0;
 }
-.about .container .row .about-text .available h5 {
+.about .container .row .about-text .available .box {
+  display: flex;
+}
+.about .container .row .about-text .available .box h5 {
   color: var(--primary-color);
   font-weight: 900;
   margin: 0;
   margin-right: 10px;
   text-shadow: 1px 1px 5px var(--darken-color);
 }
-.about .container .row .about-text .available p {
+.about .container .row .about-text .available .box div {
+  display: flex;
+  gap: 30px;
+}
+.about .container .row .about-text .available .box div p {
+  font-weight: 700;
   padding: 0px 10px;
   background-color: var(--primary-color);
   color: var(--darken-color);
   border-radius: 2px;
-  margin: 0 10px;
   position: relative;
   background-image: linear-gradient(150deg, var(--background-color) 0%, rgba(207, 113, 79, 0) 70%);
   text-shadow: 1px 1px 20px var(--darken-color);
   z-index: 3;
+  margin: 0;
 }
-.about .container .row .about-text .available p:after {
+.about .container .row .about-text .available .box div p:after {
   content: "✔";
   position: absolute;
   top: -12px;
@@ -359,13 +365,37 @@ header .container .row .main-image .box-image:hover span:nth-child(4) {
   box-shadow: 1px 0px 7px var(--darken-color);
 }
 .about .container .row .box-img img {
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 .about .container .row .box-img img:hover {
   scale: 1.1;
 }
 
+@media (max-width: 769px) {
+  .available .box {
+    flex-direction: column;
+    align-items: center;
+  }
+  .available .box h5 {
+    font-size: 30px;
+  }
+  .available .box div {
+    padding: 20px 0 0;
+  }
+}
+@media (min-width: 1025px) {
+  .available .box h5 {
+    font-size: 27px;
+  }
+  .available .box div {
+    align-items: center;
+  }
+  .available .box div p {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
 .skills {
   background-color: var(--darken-color);
   padding: 50px 0;
@@ -418,6 +448,66 @@ header .container .row .main-image .box-image:hover span:nth-child(4) {
   border-radius: 10px;
   width: 100%;
   margin-bottom: 30px;
+}
+.projects .container .row .project-card .add-project {
+  border-radius: 10px;
+  width: 100%;
+  height: 270px;
+  color: var(--main-color);
+  background-color: var(--main-color);
+  margin-bottom: 30px;
+  position: relative;
+}
+.projects .container .row .project-card .add-project p {
+  color: var(--background-color);
+  font-size: 100px;
+  font-weight: 900;
+  opacity: 0.1;
+  text-align: center;
+  line-height: 80px;
+}
+.projects .container .row .project-card .add-project .plus-col {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 130px;
+  width: 8px;
+  transform: translate(-50%, -50%);
+  color: var(--main-color);
+  background-color: var(--primary-color);
+  box-shadow: 0px 0px 20px var(--background-);
+  border-radius: 3px;
+  z-index: 1;
+}
+.projects .container .row .project-card .add-project .plus-row {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 8px;
+  width: 150px;
+  transform: translate(-50%, -50%);
+  color: var(--main-color);
+  background-color: var(--primary-color);
+  border-radius: 3px;
+  z-index: 1;
+}
+.projects .container .row .project-card .add-project .add-project-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+.projects .container .row .project-card .add-project:hover .plus-col {
+  height: 170px;
+  width: 12px;
+  border-radius: 10px;
+}
+.projects .container .row .project-card .add-project:hover .plus-row {
+  border-radius: 10px;
+  height: 12px;
+  width: 170px;
 }
 
 .contact {
