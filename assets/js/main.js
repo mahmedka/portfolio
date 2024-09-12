@@ -1,74 +1,51 @@
-var TxtType = function (el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = "";
-  this.tick();
-  this.isDeleting = false;
-};
+const words = ["Frontend Developer.", "Mohamed Kamal.", "Backend Developer."];
+let i = 0;
+let txt = "";
+let isDeleting = false;
+const typingSpeed = 120;
+const deletingSpeed = 90;
+const delayBetweenWords = 1500;
+const wrapElement = document.querySelector(".wrap");
 
-TxtType.prototype.tick = function () {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
+function type() {
+  const fullTxt = words[i % words.length];
 
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  if (isDeleting) {
+    txt = fullTxt.substring(0, txt.length - 1);
   } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
+    txt = fullTxt.substring(0, txt.length + 1);
   }
 
-  this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+  wrapElement.textContent = txt;
 
-  var that = this;
-  var delta = 150 - Math.random() * 100;
+  let speed = isDeleting ? deletingSpeed : typingSpeed;
 
-  if (this.isDeleting) {
-    delta /= 2;
+  if (!isDeleting && txt === fullTxt) {
+    speed = delayBetweenWords;
+    isDeleting = true;
+  } else if (isDeleting && txt === "") {
+    isDeleting = false;
+    i++;
+    speed = 500;
   }
 
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === "") {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
+  setTimeout(() => {
+    requestAnimationFrame(type);
+  }, speed);
+}
 
-  setTimeout(function () {
-    that.tick();
-  }, delta);
-};
-
-window.onload = function () {
-  var elements = document.getElementsByClassName("typewrite");
-  for (var i = 0; i < elements.length; i++) {
-    var toRotate = elements[i].getAttribute("data-type");
-    var period = elements[i].getAttribute("data-period");
-    if (toRotate) {
-      new TxtType(elements[i], JSON.parse(toRotate), period);
-    }
-  }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-  document.body.appendChild(css);
-};
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(type, 1000); // بداية الكتابة بعد ثانية واحدة
+});
 
 handAnimation = document.querySelector(".hand");
 btnHire = document.querySelector(".hire");
 setTimeout(() => {
-    handAnimation.style.opacity = 1;
-    btnHire.classList.add("effect");
-}, 6500);
-setInterval(() => {
-    handAnimation.style.opacity = 0;
-    btnHire.classList.remove("effect");
-    setTimeout(() => {
-        handAnimation.style.opacity = 1;
-        btnHire.classList.add("effect");
-    }, 6500)
-}, 13000);
-
+  handAnimation.style.opacity = 1;
+  btnHire.classList.add("effect");
+  
+}, 8000);
+setTimeout(() => {
+  handAnimation.style.opacity = 0;
+  btnHire.classList.remove("effect");
+}, 14500);

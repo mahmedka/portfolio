@@ -1,5 +1,16 @@
 @import url("./global.css");
 
+.whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 55px;
+  z-index: 6;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
 nav {
   z-index: 5;
   width: 100%;
@@ -94,15 +105,16 @@ nav {
     background-color: var(--primary-color);
     display: grid;
     place-items: center;
+    img {
+      width: 30px;
+      height: 30px;
+    }
     &:hover {
       scale: 1.01;
       transform: translateY(1px);
       .icon {
         transform: translateY(-5px);
         scale: 1.4;
-        svg {
-          transition: none !important;
-        }
       }
     }
   }
@@ -180,7 +192,8 @@ header {
 
           img {
             padding-top: 20px;
-            width: 100%;
+            max-width: 100%;
+            height: auto;
             background-image: linear-gradient(
               90deg,
               var(--primary-color) 52%,
@@ -399,7 +412,8 @@ header {
       }
       .box-img {
         img {
-          width: 100%;
+          max-width: 100%;
+          height: auto;
           margin: auto;
           &:hover {
             scale: 1.1;
@@ -411,6 +425,9 @@ header {
 }
 
 @media (max-width: 769px) {
+  .about {
+    padding: 0 0;
+  }
   .available {
     .box {
       flex-direction: column;
@@ -488,12 +505,13 @@ header {
     }
     .row {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       .project-card {
         img {
           border-radius: 10px;
-          width: 100%;
+          max-width: 100%;
+          height: auto;
           margin-bottom: 30px;
         }
         .add-project {
@@ -501,7 +519,6 @@ header {
           width: 100%;
           height: 270px;
           color: var(--main-color);
-          // outline: 2px solid var(--main-color);
           background-color: var(--main-color);
           margin-bottom: 30px;
           position: relative;
@@ -564,16 +581,32 @@ header {
     }
   }
 }
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  .add-project {
+    width: 100%;
+    height: 195px !important;
+
+    p {
+      line-height: 60px !important;
+      font-size: 80px !important;
+    }
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  /* Styles for devices with a width between 600px and 1024px */
+}
 
 .contact {
-  padding: 20px 0 40px;
+  padding: 30px 0 40px;
+  background-color: var(--primary-color);
   .container {
     h2 {
       margin: 30px 0 60px;
       text-align: center;
       font-weight: 700;
       position: relative;
-      text-shadow: 0px 0px 50px var(--darken-color);
+      text-shadow: 0px 0px 90px var(--background-color);
+      color: var(--background-color);
       z-index: 1;
       &::after {
         content: "Hire me";
@@ -581,7 +614,7 @@ header {
         position: absolute;
         font-size: 100px;
         word-wrap: unset;
-        opacity: 0.08;
+        opacity: 0.1;
         z-index: -1;
         left: 50%;
         top: 80;
@@ -595,10 +628,75 @@ header {
       .contact-img {
         margin-bottom: 20px;
         img {
-          width: 100%;
+          max-width: 100%;
+          height: auto;
         }
       }
       .contact-links {
+        background-color: var(--main-color);
+        width: fit-content;
+        padding: 60px 40px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+
+        h3 {
+          color: var(--background-color);
+        }
+        .link {
+          width: 100%;
+          height: fit-content;
+          border: 2px solid var(--primary-color);
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          position: relative;
+          background-color: var(--background-color);
+          gap: 30px;
+          background-image: linear-gradient(
+            270deg,
+            var(--primary-color) 0%,
+            #cf714f00 90%
+          );
+
+          .icon {
+            width: 70px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            border-right: 1px solid #e1e1e1;
+            padding: 0 10px;
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+          p {
+            width: 100%;
+            color: var(--main-color);
+            padding: 10px 0;
+            margin: 0;
+          }
+          a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 3;
+          }
+          .click {
+            position: absolute;
+            width: 70px;
+            height: auto;
+            bottom: -30px;
+            right: -30px;
+            z-index: 2;
+            transform: skew(10deg, 10deg);
+          }
+        }
       }
     }
   }
@@ -606,6 +704,11 @@ header {
 
 footer {
   background-color: var(--main-color);
+  background-image: linear-gradient(
+    180deg,
+    var(--primary-color) 0%,
+    #cf714f00 20%
+  );
 
   padding: 30px 0;
   .container {
@@ -629,15 +732,3 @@ footer {
     }
   }
 }
-@keyframes writer {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: orange;
-  }
-}
-
-// header
-// filter: sepia(3) saturate(2000%) hue-rotate(320deg) brightness(0.9);
