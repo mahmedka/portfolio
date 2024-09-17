@@ -59,6 +59,7 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" defer="defer" />
+    <link rel="stylesheet" href="assets/css/animate.css" async />
     <link rel="stylesheet" href="assets/css/style.css" async />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"
@@ -71,7 +72,7 @@
       window.addEventListener("load", function () {
         setTimeout(function () {
           document.getElementById("loader-body").style.display = "none";
-        }, 3000);
+        }, 2800);
       });
     </script>
     <a class="whatsapp" href="https://wa.me/+201009698696" target="_blank"
@@ -84,26 +85,25 @@
       <div class="container">
         <a class="navbar-brand" href="#"
           ><img
-            class="brandname"
+            class="brandname wow slideInLeft"
+            data-wow-delay="3s"
             src="assets/images/logo.webp"
             alt="brand name"
             loading="lazy"
-          /> </a
-        ><span></span> <span></span> <span></span>
+          />
+        </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto d-flex mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home"
-                >Home</a
-              >
+            <li class="nav-item wow fadeInLeft" data-wow-delay="3s">
+              <a class="nav-link active" href="#home">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item wow fadeInLeft" data-wow-delay="3s">
               <a class="nav-link" href="#about">About</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item wow fadeInRight" data-wow-delay="3s">
               <a class="nav-link" href="#projects">Projects</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item wow fadeInRight" data-wow-delay="3s">
               <a class="nav-link" href="#contact">Contacts</a>
             </li>
           </ul>
@@ -111,7 +111,8 @@
         <a
           href="./assets/files/Mohamed Kamal CV.pdf"
           download="Mohamed Kamal.pdf"
-          class="cv-btn"
+          class="cv-btn wow slideInRight"
+          data-wow-delay="3s"
           >Download CV</a
         >
       </div>
@@ -121,11 +122,11 @@
         <div class="container">
           <div class="row d-flex justify-content-between align-items-center">
             <div class="text col-lg-6 col-md-7 col-12">
-              <h2>Hello, I'm</h2>
-              <h1>
+              <h2 class="wow fadeInRight" data-wow-delay="3s">Hello, I'm</h2>
+              <h1 data-wow-delay="3s">
                 <p class="typewrite"><span class="wrap"></span>|</p>
               </h1>
-              <p class="text-about">
+              <p class="text-about wow fadeInRight" data-wow-delay="3.1s">
                 I'am a Vue Frontend Developer and freelancer, I blend creativity
                 with technical expertise to deliver sleek, responsive designs
                 that elevate brands and captivate users.
@@ -133,7 +134,8 @@
               <div class="social d-flex">
                 <a
                   href="https://web.facebook.com/Alkabitanoo1"
-                  class="social-icon"
+                  class="social-icon wow fadeInRight"
+                  data-wow-delay="3s"
                   ><div class="icon">
                     <img
                       src="assets/images/social/facebook.svg"
@@ -142,21 +144,24 @@
                     /></div></a
                 ><a
                   href="www.linkedin.com/in/mohamed-kamal-morgan"
-                  class="social-icon"
+                  class="social-icon wow fadeInRight"
+                  data-wow-delay="3.2s"
                   ><div class="icon">
                     <img
                       src="assets/images/social/linkedin.svg"
                       loading="lazy"
                       alt="icon"
                     /></div></a
-                ><a href="https://wa.me/+201009698696" class="social-icon"
+                ><a href="https://wa.me/+201009698696" class="social-icon wow fadeInRight"
+                data-wow-delay="3.4s"
                   ><div class="icon">
                     <img
                       src="assets/images/social/whatsapp.svg"
                       loading="lazy"
                       alt="icon"
                     /></div></a
-                ><a href="https://github.com/mahmedka" class="social-icon"
+                ><a href="https://github.com/mahmedka" class="social-icon wow fadeInRight"
+                data-wow-delay="3.6s"
                   ><div class="icon">
                     <img
                       src="assets/images/social/github.svg"
@@ -165,7 +170,8 @@
                     /></div></a
                 ><a
                   href="https://www.instagram.com/m7md.kml"
-                  class="social-icon"
+                  class="social-icon wow fadeInRight"
+                  data-wow-delay="3.8s"
                   ><div class="icon">
                     <img
                       src="assets/images/social/instagram.svg"
@@ -176,12 +182,13 @@
               </div>
               <div class="btns">
                 <a
-                  class="cv-btn"
+                  class="cv-btn wow fadeInUp"
                   href="./assets/files/Mohamed Kamal CV.pdf"
                   download="Mohamed Kamal.pdf"
+                  data-wow-delay="3.3s"
                   >Download CV</a
                 >
-                <a class="hire" href="#contact">Hire me</a>
+                <a class="hire wow fadeInUp" href="#contact" data-wow-delay="3.3s">Hire me</a>
                 <img
                   class="hand"
                   src="assets/images/hand.webp"
@@ -195,12 +202,18 @@
             </div>
             <div class="main-image col-lg-4 col-md-5 col-12">
               <div class="box-image">
-                <span></span> <span></span> <span></span> <span></span>
+                <span class="wow fadeInLeftBig" data-wow-delay="3s" data-wow-duration="1.5s"></span>
+                <span class="wow fadeInUpBig" data-wow-delay="3s" data-wow-duration="1.5s"></span>
+                <span class="wow fadeInRightBig" data-wow-delay="3s" data-wow-duration="1.5s"></span>
+                <span class="wow fadeInDownBig" data-wow-delay="3s" data-wow-duration="1.5s"></span>
                 <div>
                   <img
                     src="assets/images/main.webp"
                     loading="lazy"
                     alt="main image"
+                    class="wow fadeInUp"
+                    data-wow-delay="3s"
+                    data-wow-duration="2s"
                   />
                 </div>
                 <div class="bottom-shadow"></div>
@@ -211,18 +224,18 @@
       </header>
       <section class="about" id="about">
         <div class="container">
-          <h2>About me</h2>
+          <h2 class="wow fadeInUp">About me</h2>
           <div class="row">
             <div class="about-text col-lg-6 col-md-10 col-12">
-              <p class="detailes">
+              <p class="detailes wow fadeInUp">
                 <b>Hello,</b> my name is Mohamed, and I am a graduate of Delta
                 Academy with a degree in Information Systems. I have extensive
                 experience in front-end development, along with solid experience
                 in back-end technologies, particularly as a Vue.js developer and
                 working with Laravel.
               </p>
-              <div class="available">
-                <div class="box">
+              <div class="available wow fadeInUp">
+                <div class="box wow fadeInUp">
                   <h5>Available for :</h5>
                   <div>
                     <p>Freelance</p>
@@ -230,13 +243,13 @@
                   </div>
                 </div>
               </div>
-              <div class="info">
+              <div class="info wow fadeInUp">
                 <h5><span>+2</span> Years of experience.</h5>
                 <h5><span>+15</span> Projects.</h5>
                 <h5><span>+6</span> Happy Clients.</h5>
               </div>
             </div>
-            <div class="box-img col-lg-5 col-md-12 col-12">
+            <div class="box-img col-lg-5 col-md-12 col-12 wow fadeInUp">
               <img
                 src="assets/images/coding.webp"
                 loading="lazy"
@@ -249,71 +262,72 @@
 
       <section class="skills">
         <div class="container">
-          <h2>Skills</h2>
+          <h2 class="wow fadeInUp">Skills</h2>
           <div class="col-12 tag-canvas"></div>
         </div>
       </section>
+
       <section class="projects" id="projects">
-        <div class="container">
+        <div class="container ">
           <h2>Projects</h2>
-          <div class="row">
-            <div class="project-card col-12 col-md-6 col-lg-4">
+          <div class="row row-projects">
+            <div class="project-card col-12 col-md-6 col-lg-4 wow fadeInUp">
               <img
                 src="./assets/images/projects/01.webp"
                 loading="lazy"
                 alt="project 1"
               />
             </div>
-            <div class="project-card col-12 col-md-6 col-lg-4">
+            <div class="project-card col-12 col-md-6 col-lg-4 wow fadeInUp">
               <img
                 src="./assets/images/projects/02.webp"
                 loading="lazy"
                 alt="project 2"
               />
             </div>
-            <div class="project-card col-12 col-md-6 col-lg-4">
+            <div class="project-card col-12 col-md-6 col-lg-4 wow fadeInUp">
               <img
                 src="./assets/images/projects/03.webp"
                 loading="lazy"
                 alt="project 3"
               />
             </div>
-            <div class="project-card col-12 col-md-6 col-lg-4">
+            <div class="project-card col-12 col-md-6 col-lg-4 wow fadeInUp">
               <img
                 src="./assets/images/projects/04.webp"
                 loading="lazy"
                 alt="project 4"
               />
             </div>
-            <div class="project-card col-12 col-md-6 col-lg-4">
+            <div class="project-card col-12 col-md-6 col-lg-4 wow fadeInUp">
               <img
                 src="./assets/images/projects/05.webp"
                 loading="lazy"
                 alt="project 5"
               />
             </div>
-            <div class="project-card col-12 col-md-6 col-lg-4">
+            <div class="project-card col-12 col-md-6 col-lg-4 wow fadeInUp">
               <img
                 src="./assets/images/projects/06.webp"
                 loading="lazy"
                 alt="project 6"
               />
             </div>
-            <div class="project-card col-12 col-md-6 col-lg-4">
+            <div class="project-card col-12 col-md-6 col-lg-4 wow fadeInUp">
               <img
                 src="./assets/images/projects/07.webp"
                 loading="lazy"
                 alt="project 6"
               />
             </div>
-            <div class="project-card col-12 col-md-6 col-lg-4">
+            <div class="project-card col-12 col-md-6 col-lg-4 wow fadeInUp">
               <img
                 src="./assets/images/projects/08.webp"
                 loading="lazy"
                 alt="project 6"
               />
             </div>
-            <div class="project-card col-12 col-md-6 col-lg-4">
+            <div class="project-card col-12 col-md-6 col-lg-4 wow fadeInUp">
               <div class="add-project">
                 <div class="plus-col"></div>
                 <div class="plus-row"></div>
@@ -325,11 +339,11 @@
         </div>
       </section>
 
-      <section class="contact" >
+      <section class="contact">
         <div class="container">
           <h2>Contacts</h2>
           <div class="row">
-            <div class="contact-img col-lg-5 col-md-11 col-12">
+            <div class="contact-img col-lg-5 col-md-11 col-12 wow fadeInUp">
               <img
                 src="assets/images/person.webp"
                 loading="lazy"
@@ -358,26 +372,26 @@
                 <a href="mailto:mohamed.ka.cp@gmail.com" target="_blank"></a>
               </div>
             </div>
-            <div class="contact-links col-lg-5 col-md-11 col-11">
-              <h3>Contact Me</h3>
+            <div class="contact-links col-lg-5 col-md-11 col-11 wow fadeInUp">
+              <h3 class="wow fadeInUp" id="contact">Contact Me</h3>
               <form
-                id="contact"
+                class="wow fadeInUp"
                 action="https://formspree.io/f/mblreydk"
                 method="POST"
               >
-                <div>
+                <div class="wow fadeInUp">
                   <label>Name:</label>
                   <input type="text" name="name" placeholder="Name ..." />
                 </div>
-                <div>
+                <div class="wow fadeInUp">
                   <label>Your email:</label>
                   <input type="email" name="email" placeholder="Email ..." />
                 </div>
-                <div>
+                <div class="wow fadeInUp">
                   <label>message:</label>
                   <textarea name="message" placeholder="Message ..."></textarea>
                 </div>
-                <button type="submit">Send Message</button>
+                <button class="wow fadeInUp" type="submit">Send Message</button>
               </form>
             </div>
           </div>
@@ -386,14 +400,14 @@
     </main>
     <footer>
       <div class="container">
-        <div class="row">
-          <h5>
+        <div class="row wow fadeInUp">
+          <h5 >
             Designed & Created by
             <a href="#home"
               ><img src="assets/images/logo.webp" loading="lazy" alt="logo"
             /></a>
           </h5>
-          <div class="social d-flex">
+          <div class="social d-flex wow fadeInUp">
             <a href="https://web.facebook.com/Alkabitanoo1" class="social-icon"
               ><div class="icon">
                 <img
@@ -438,6 +452,10 @@
     </footer>
     <script src="assets/js/matter.js" defer="defer"></script>
     <script src="assets/js/bootstrap.min.js" defer="defer"></script>
+    <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js" async></script>
+    <script>
+      new WOW().init();
+    </script>
   </body>
 </html>
