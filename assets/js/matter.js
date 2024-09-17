@@ -46,44 +46,61 @@ function initSimulation() {
   var roof = Bodies.rectangle(containerWidth / 2, -50, containerWidth, 100, {
     isStatic: true,
   });
+
   function createRandomBody(imagePath) {
     var randomX = Math.random() * containerWidth;
     var randomY = (Math.random() * containerHeight) / 2;
-    var body = Bodies.rectangle(randomX, randomY, 145, 40, {
-      render: {
-        fillStyle: "#EDDC8C",
-        sprite: { texture: imagePath, xScale: 1, yScale: 1 },
-      },
-    });
-    var randomForceX = (Math.random() - 0.5) * 0.03;
-    var randomForceY = (Math.random() - 0.5) * 0.03;
-    Matter.Body.applyForce(
-      body,
-      { x: body.position.x, y: body.position.y },
-      { x: randomForceX, y: randomForceY }
-    );
-    return body;
+    var img = new Image();
+    img.src = imagePath;
+
+    img.onload = function () {
+      var body = Bodies.rectangle(randomX, randomY, 145, 40, {
+        render: {
+          fillStyle: "#EDDC8C",
+          sprite: { texture: imagePath, xScale: 1, yScale: 1 },
+        },
+      });
+      var randomForceX = (Math.random() - 0.5) * 0.03;
+      var randomForceY = (Math.random() - 0.5) * 0.03;
+      Matter.Body.applyForce(
+        body,
+        { x: body.position.x, y: body.position.y },
+        { x: randomForceX, y: randomForceY }
+      );
+      World.add(engine.world, body);
+    };
+
+    img.onerror = function () {
+      console.error(`Failed to load image: ${imagePath}`);
+    };
   }
-  var bodies = [
-    createRandomBody("./assets/images/skills/Html.svg"),
-    createRandomBody("./assets/images/skills/css.svg"),
-    createRandomBody("./assets/images/skills/bootstrap.svg"),
-    createRandomBody("./assets/images/skills/scss.svg"),
-    createRandomBody("./assets/images/skills/laravel.svg"),
-    createRandomBody("./assets/images/skills/php.svg"),
-    createRandomBody("./assets/images/skills/javascript.svg"),
-    createRandomBody("./assets/images/skills/tailwind.svg"),
-    createRandomBody("./assets/images/skills/git.svg"),
-    createRandomBody("./assets/images/skills/github.svg"),
-    createRandomBody("./assets/images/skills/vue.svg"),
-    createRandomBody("./assets/images/skills/mysql.svg"),
-    createRandomBody("./assets/images/skills/canva.svg"),
-    createRandomBody("./assets/images/skills/typescript.svg"),
-    createRandomBody("./assets/images/skills/photoshop.svg"),
-    createRandomBody("./assets/images/skills/sql.svg"),
-    createRandomBody("./assets/images/skills/ui-ux.svg"),
+
+  var imagePaths = [
+    "./assets/images/skills/html.svg",
+    "./assets/images/skills/css.svg",
+    "./assets/images/skills/bootstrap.svg",
+    "./assets/images/skills/scss.svg",
+    "./assets/images/skills/laravel.svg",
+    "./assets/images/skills/php.svg",
+    "./assets/images/skills/javascript.svg",
+    "./assets/images/skills/tailwind.svg",
+    "./assets/images/skills/git.svg",
+    "./assets/images/skills/github.svg",
+    "./assets/images/skills/vue.svg",
+    "./assets/images/skills/mysql.svg",
+    "./assets/images/skills/canva.svg",
+    "./assets/images/skills/typescript.svg",
+    "./assets/images/skills/photoshop.svg",
+    "./assets/images/skills/sql.svg",
+    "./assets/images/skills/ui-ux.svg",
   ];
-  World.add(engine.world, [ground, wallLeft, wallRight, roof, ...bodies]);
+
+  // تحميل كل الصور بشكل متزامن
+  imagePaths.forEach((path) => {
+    createRandomBody(path);
+  });
+
+  World.add(engine.world, [ground, wallLeft, wallRight, roof]);
   var mouse = Mouse.create(render.canvas),
     mouseConstraint = MouseConstraint.create(engine, {
       mouse: mouse,
@@ -94,6 +111,7 @@ function initSimulation() {
   Engine.run(engine);
   Render.run(render);
 }
+
 var containerElement = document.querySelector(".tag-canvas");
 var observer = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
