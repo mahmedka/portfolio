@@ -418,9 +418,6 @@ header .container .row .main-image .box-image:hover span:nth-child(4) {
   height: auto;
   margin: auto;
 }
-.about .container .row .box-img img:hover {
-  scale: 1.1;
-}
 
 @media (max-width: 426px) {
   .about {

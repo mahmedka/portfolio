@@ -56,3 +56,14 @@ setTimeout(() => {
 // <div class="project-card col-12 col-md-6 col-lg-4"><div class="add-project">
 // <div class="plus-col"></div><div class="plus-row"></div><a class="add-project-link" href="#contact">
 // </a><p>Add<br />Your<br />Project</p></div></div>`;
+
+const image = document.getElementById("myImage");
+const audio = document.getElementById("myAudio");
+
+image.addEventListener("click", function () {
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+});
